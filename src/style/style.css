@@ -1,0 +1,28 @@
+body {
+  background: rgb(66, 6, 6);
+  color: rgb(247, 204, 13);
+}
+.list-class {
+  user-select: none;
+  cursor: pointer;
+  padding: 5px;
+}
+.class-card {
+  background: rgb(247, 204, 13);
+  color: rgb(66, 6, 6);
+  margin: 10px;
+  padding: 20px;
+  width: 200px;
+  border-radius: 20px;
+}
+.btn {
+  background: rgb(66, 6, 6);
+  color: rgb(247, 204, 13);
+  padding: 5px 10px;
+  border-radius: 100px;
+  cursor: pointer;
+}
+.student {
+  user-select: none;
+  cursor: pointer;
+}
