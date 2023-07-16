@@ -1,20 +1,20 @@
 {
   "classrooms": [
     {
+      "id": 1,
       "classId": "class1",
-      "id": "class1",
       "name": "Classe 1"
     },
     {
+      "id": 2,
       "classId": "class2",
-      "id": "class2",
       "name": "Classe 2"
     }
   ],
   "students": [
     {
-      "classId": "class1",
       "id": 1,
+      "classId": "class1",
       "firstname": "Alfonse",
       "surname": "Brown",
       "frenchMarks": [10, 14, 12, 11],
@@ -22,8 +22,8 @@
       "scienceMarks": [3, 4, 2, 5]
     },
     {
-      "classId": "class1",
       "id": 2,
+      "classId": "class1",
       "firstname": "Gérard",
       "surname": "Bouchard",
       "frenchMarks": [0, 4, 12, 1],
@@ -31,8 +31,8 @@
       "scienceMarks": [13, 14, 12, 15]
     },
     {
-      "classId": "class1",
       "id": 3,
+      "classId": "class1",
       "firstname": "Ginette",
       "surname": "Ténu",
       "frenchMarks": [20, 18, 19, 20],
@@ -40,8 +40,8 @@
       "scienceMarks": [17, 18, 14, 13]
     },
     {
-      "classId": "class2",
       "id": 4,
+      "classId": "class2",
       "firstname": "Lucette",
       "surname": "Baleyette",
       "frenchMarks": [13, 14, 12, 11],
@@ -49,8 +49,8 @@
       "scienceMarks": [13, 14, 12, 15]
     },
     {
-      "classId": "class2",
       "id": 5,
+      "classId": "class2",
       "firstname": "Bernadette",
       "surname": "Paschirac",
       "frenchMarks": [16, 14, 13, 3],
@@ -58,8 +58,8 @@
       "scienceMarks": [13, 14, 2, 5]
     },
     {
-      "classId": "class2",
       "id": 6,
+      "classId": "class2",
       "firstname": "Baudoin",
       "surname": "Armbrocken",
       "frenchMarks": [0, 4, 2, 1],
