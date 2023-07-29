@@ -1,0 +1,3 @@
+pour calculer la moyenne général je dois additionner tous les tableaux de notes
+
+
