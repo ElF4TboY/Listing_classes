@@ -7,6 +7,7 @@ export type classroomsApi = {
 export type studentsApi = {
   id: string;
   classId: string;
+  studentId: string;
   firstname: string;
   surname: string;
   frenchMarks: number[];
@@ -14,7 +15,7 @@ export type studentsApi = {
   scienceMarks: number[];
 };
 
-export type noteBoard = {
+export type notesBoardApi = {
   id: string;
   studentId: string;
   frenchMarks: number[];

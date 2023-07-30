@@ -1,5 +1,6 @@
 import { studentsApi } from "../../interfaces/interfaces";
 import { createBtn, createDiv, createLi, createUl } from "../createHTMLElement";
+import { fetchApi } from "../fetchApi";
 
 /**
  * to display each students of each class of the API
@@ -15,7 +16,7 @@ export const displayStudents = (students: studentsApi[], id: string) => {
       const newContent = document.createTextNode(
         `${student.firstname} ${student.surname}`
       );
-      const newLi = createLi("list-students", `${student.id}`, newContent);
+      const newLi = createLi("list-students", newContent, `${student.id}`);
       const newBtn = createBtn(`${student.id}-btn`);
 
       newLi.appendChild(newBtn);
@@ -27,8 +28,13 @@ export const displayStudents = (students: studentsApi[], id: string) => {
     const getNewBtn: HTMLElement | null = document.getElementById(
       `${student.id}-btn`
     );
-    getNewBtn?.addEventListener("click", () =>
-      console.log(`surprise motherfucker ${student.id}`)
-    );
+    getNewBtn?.addEventListener("click", () => {
+      fetchApi(
+        "http://localhost:3004/notesBoard",
+        "notes",
+        student.id,
+        student.studentId
+      );
+    });
   });
 };

@@ -1,14 +1,25 @@
-import { classroomsApi, studentsApi } from "../interfaces/interfaces";
+import {
+  classroomsApi,
+  studentsApi,
+  notesBoardApi,
+} from "../interfaces/interfaces";
 import { displayClassroom } from "./displayComponents/displayClassroom";
+import { displayNotes } from "./displayComponents/displayNotes";
 import { displayStudents } from "./displayComponents/displayStudents";
 
 let classrooms: classroomsApi[];
 let students: studentsApi[];
+let notesBoard: studentsApi[];
 
 /**
  *@param {string | null} id
  */
-export const fetchApi = async (slug: string, className: string, id?: any) => {
+export const fetchApi = async (
+  slug: string,
+  className: string,
+  id?: any,
+  foreignKey?: any
+) => {
   await fetch(slug)
     .then((res) => res.json())
     .then((data) => {
@@ -20,6 +31,10 @@ export const fetchApi = async (slug: string, className: string, id?: any) => {
         case "students":
           students = data;
           displayStudents(students, id);
+          break;
+        case "notes":
+          notesBoard = data;
+          displayNotes(notesBoard, id, foreignKey);
           break;
 
         default:

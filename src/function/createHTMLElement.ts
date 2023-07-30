@@ -1,3 +1,5 @@
+import { calculateAverage } from "./calculateAverage";
+
 export const createDiv = (className: string): HTMLElement => {
   const newDiv: HTMLElement = document.createElement("div");
   newDiv.setAttribute("class", className);
@@ -16,10 +18,13 @@ export const createUl = (className?: any): HTMLElement => {
   return newUl;
 };
 
+/**
+ * @param {string | null} id
+ */
 export const createLi = (
   className: string,
-  id: string,
-  content: Text
+  content: Text,
+  id?: any
 ): HTMLElement => {
   const newLi = document.createElement("li");
 
@@ -37,4 +42,18 @@ export const createBtn = (id: string): HTMLElement => {
   newBtn.textContent = "Open";
 
   return newBtn;
+};
+
+export const createContent = (
+  subject: string,
+  notesBoard: number[]
+): HTMLElement => {
+  const newContent = document.createTextNode(`
+  Voici les notes de ${subject}, la moyenne de ${subject} est de ${calculateAverage(
+    notesBoard
+  )}.
+  `);
+  const newLi = createLi("notes", newContent);
+
+  return newLi;
 };

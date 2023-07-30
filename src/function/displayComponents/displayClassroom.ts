@@ -12,7 +12,7 @@ export const displayClassroom = (classrooms: classroomsApi[]) => {
 
   classrooms.map((classroom) => {
     const newContent: Text = document.createTextNode(`${classroom.name}`);
-    const newLi = createLi("list-class", classroom.classId, newContent);
+    const newLi = createLi("list-class", newContent, classroom.classId);
     const newBtn = createBtn(`${classroom.classId}-btn`);
 
     newLi.appendChild(newBtn);
