@@ -29,12 +29,21 @@ export const displayStudents = (students: studentsApi[], id: string) => {
       `${student.id}-btn`
     );
     getNewBtn?.addEventListener("click", () => {
-      fetchApi(
-        "http://localhost:3004/notesBoard",
-        "notes",
-        student.id,
-        student.studentId
+      const getDiv: HTMLElement | null = document.querySelector(
+        `.${student.id}`
       );
+      if (getDiv) {
+        getDiv.remove();
+        getNewBtn.textContent = "Open";
+      } else {
+        fetchApi(
+          "http://localhost:3004/notesBoard",
+          "notes",
+          student.id,
+          student.studentId
+        );
+        getNewBtn.textContent = "Close";
+      }
     });
   });
 };
