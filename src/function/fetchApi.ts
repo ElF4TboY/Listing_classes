@@ -9,7 +9,7 @@ import { displayStudents } from "./displayComponents/displayStudents";
 
 let classrooms: classroomsApi[];
 let students: studentsApi[];
-let notesBoard: studentsApi[];
+let notesBoard: notesBoardApi[];
 
 /**
  *@param {string | null} id
