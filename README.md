@@ -1,0 +1,1 @@
+The application aims to list the classes of a school, clicking on the class opens a list of all students in a class, clicking on the student displays all the marks and the average of each subject as well as his general average.
