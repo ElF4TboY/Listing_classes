@@ -25,6 +25,8 @@ export const fetchApi = async (
     .then((data) => {
       switch (className) {
         case "classroom":
+          console.log(data);
+
           classrooms = data;
           displayClassroom(classrooms);
           break;

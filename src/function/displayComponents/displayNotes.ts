@@ -1,4 +1,4 @@
-import { notesBoardApi } from "../../interfaces/interfaces";
+// import { notesBoardApi } from "../../interfaces/interfaces";
 import { calculateAverage } from "../calculateAverage";
 import {
   createContent,
@@ -6,12 +6,9 @@ import {
   createLi,
   createUl,
 } from "../createHTMLElement";
+import { notesBoard } from "../../db/mockNotesBoard";
 
-export const displayNotes = (
-  notesBoard: notesBoardApi[],
-  id: string,
-  foreignKey: string
-) => {
+export const displayNotes = (id: string, foreignKey: string) => {
   const parentNode: HTMLElement | null = document.getElementById(id);
   const newDiv = createDiv("student");
   const newUl = createUl("list-notes");
@@ -25,7 +22,7 @@ export const displayNotes = (
       const allNotes = [...frenchMarks, ...mathMarks, ...scienceMarks];
 
       const newContent = document.createTextNode(
-        `La moyenne générale est de ${calculateAverage(allNotes)}.`
+        `La moyenne générale est de ${calculateAverage(allNotes)} / 20.`
       );
       const newLi = createLi("notes", newContent);
 

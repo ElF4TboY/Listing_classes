@@ -1,3 +1,4 @@
-import { fetchApi } from "./function/fetchApi";
+// import { fetchApi } from "./function/fetchApi";
+import { displayClassroom } from "./function/displayComponents/displayClassroom";
 
-fetchApi("http://localhost:3004/classrooms", "classroom");
+displayClassroom();

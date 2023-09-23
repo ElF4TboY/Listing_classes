@@ -49,9 +49,9 @@ export const createContent = (
   notesBoard: number[]
 ): HTMLElement => {
   const newContent = document.createTextNode(`
-  Voici les notes de ${subject}, la moyenne de ${subject} est de ${calculateAverage(
-    notesBoard
-  )}.
+  Voici les notes de ${subject} : ${notesBoard.join(
+    ", "
+  )}, la moyenne de ${subject} est de ${calculateAverage(notesBoard)} / 20.
   `);
   const newLi = createLi("notes", newContent);
 

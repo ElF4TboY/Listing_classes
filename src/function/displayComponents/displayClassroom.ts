@@ -1,11 +1,13 @@
-import { classroomsApi } from "../../interfaces/interfaces";
+// import { classroomsApi } from "../../interfaces/interfaces";
+// import { fetchApi } from "../fetchApi";
 import { createBtn, createDiv, createLi, createUl } from "../createHTMLElement";
-import { fetchApi } from "../fetchApi";
+import { classrooms } from "../../db/mockClassrooms";
+import { displayStudents } from "./displayStudents";
 
 /**
  * to display each classroom of the API
  */
-export const displayClassroom = (classrooms: classroomsApi[]) => {
+export const displayClassroom = () => {
   const app: HTMLElement | null = document.getElementById("app");
   const newDiv = createDiv("all-classrooms");
   const newUl = createUl("class-container");
@@ -31,11 +33,12 @@ export const displayClassroom = (classrooms: classroomsApi[]) => {
         getDiv.remove();
         newBtn.textContent = "Open";
       } else {
-        fetchApi(
-          "http://localhost:3004/students",
-          "students",
-          classroom.classId
-        );
+        // fetchApi(
+        //   "http://localhost:3004/students",
+        //   "students",
+        //   classroom.classId
+        // );
+        displayStudents(classroom.classId);
         newBtn.textContent = "Close";
       }
     });

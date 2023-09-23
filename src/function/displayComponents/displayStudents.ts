@@ -1,11 +1,13 @@
-import { studentsApi } from "../../interfaces/interfaces";
+// import { studentsApi } from "../../interfaces/interfaces";
 import { createBtn, createDiv, createLi, createUl } from "../createHTMLElement";
-import { fetchApi } from "../fetchApi";
+// import { fetchApi } from "../fetchApi";
+import { students } from "../../db/mockStudents";
+import { displayNotes } from "./displayNotes";
 
 /**
  * to display each students of each class of the API
  */
-export const displayStudents = (students: studentsApi[], id: string) => {
+export const displayStudents = (id: string) => {
   const parentNode: HTMLElement | null = document.getElementById(id);
   const newDiv = createDiv("class-card");
   const newUl = createUl("students-container");
@@ -36,12 +38,13 @@ export const displayStudents = (students: studentsApi[], id: string) => {
         getDiv.remove();
         getNewBtn.textContent = "Open";
       } else {
-        fetchApi(
-          "http://localhost:3004/notesBoard",
-          "notes",
-          student.id,
-          student.studentId
-        );
+        // fetchApi(
+        //   "http://localhost:3004/notesBoard",
+        //   "notes",
+        //   student.id,
+        //   student.studentId
+        // );
+        displayNotes(student.id, student.studentId);
         getNewBtn.textContent = "Close";
       }
     });
