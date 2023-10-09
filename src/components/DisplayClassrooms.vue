@@ -10,7 +10,7 @@
         <button :id="classroom.id" @click="toggle">open</button>
         <div :class="classroom.classId"></div>
         <DisplayStudents
-          v-if="isShow && target === classroom.id"
+          v-if="isShow && targetIdBtn === classroom.id"
           :className="classroom.classId"
         />
       </li>
@@ -23,10 +23,10 @@ import { defineAsyncComponent, onMounted, ref } from "vue";
 
 const classrooms = ref([]);
 const isShow = ref(false);
-const target = ref("");
+const targetIdBtn = ref("");
 
 const toggle = (e) => {
-  target.value = e.target.id;
+  targetIdBtn.value = e.target.id;
   isShow.value = !isShow.value;
 };
 

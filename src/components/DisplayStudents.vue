@@ -1,9 +1,11 @@
 <template>
-  <ul class="students-container">
-    <li class="students-list" v-for="student in students" :key="student.id">
-      {{ student.firstname }} {{ student.surname }}
-    </li>
-  </ul>
+  <div :class="className">
+    <ul class="students-container">
+      <li class="students-list" v-for="student in students" :key="student.id">
+        {{ student.firstname }} {{ student.surname }}
+      </li>
+    </ul>
+  </div>
 </template>
 <script setup>
 import { onMounted, ref } from "vue";
