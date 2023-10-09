@@ -1,4 +1,0 @@
-voir pour refactorer display component
-voir pour refactorer createHTMLElement
-
-https://bobbyhadz.com/blog/typescript-http-request-axios
