@@ -1,5 +1,15 @@
 <template>
-  <h2>classes</h2>
+  <div class="main">
+    <ul class="classes-container">
+      <li
+        class="classroom-list"
+        v-for="classroom in classrooms"
+        :key="classroom.id"
+      >
+        {{ classroom.name }}
+      </li>
+    </ul>
+  </div>
 </template>
 
 <script setup>
@@ -9,10 +19,9 @@ const classrooms = ref([]);
 
 onMounted(async () => {
   try {
-    const response = await fetch(
-      "https://jsonplaceholder.typicode.com/users/1/posts"
-    );
+    const response = await fetch("http://localhost:3004/classrooms");
     classrooms.value = await response.json();
+    console.log(classrooms.value);
   } catch (err) {
     console.log(err);
   }
