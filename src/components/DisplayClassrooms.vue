@@ -7,12 +7,8 @@
         :key="classroom.id"
       >
         {{ classroom.name }}
-        <button :id="classroom.id" @click="toggle">open</button>
-        <div :class="classroom.classId"></div>
-        <DisplayStudents
-          v-if="isShow && target === classroom.id"
-          :className="classroom.classId"
-        />
+        <button :id="classroom.id" @click="onClick">open</button>
+        <DisplayStudents :className="classroom.classId" :test="click" />
       </li>
     </ul>
   </div>
@@ -23,11 +19,13 @@ import { defineAsyncComponent, onMounted, ref } from "vue";
 
 const classrooms = ref([]);
 const isShow = ref(false);
-const target = ref("");
+const targetIdBtn = ref("");
+const click = ref("");
 
-const toggle = (e) => {
-  target.value = e.target.id;
+const onClick = (e) => {
+  targetIdBtn.value = e.target.id;
   isShow.value = !isShow.value;
+  click.value = "click";
 };
 
 onMounted(async () => {

@@ -1,5 +1,5 @@
 <template>
-  <h1>Surprise motherfucker</h1>
+  <h1>Listing classes</h1>
   <DisplayClassrooms />
 </template>
 
