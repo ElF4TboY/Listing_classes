@@ -11,7 +11,9 @@
 import { onMounted, ref } from "vue";
 
 const students = ref([]);
-const props = defineProps(["className"]);
+const isShow = ref(false);
+const props = defineProps(["className", "test"]);
+console.log(props.test);
 
 onMounted(async () => {
   try {
